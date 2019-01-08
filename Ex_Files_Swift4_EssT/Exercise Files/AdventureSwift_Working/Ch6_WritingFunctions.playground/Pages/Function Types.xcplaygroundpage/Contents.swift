@@ -10,8 +10,17 @@
  + Create another function called **dealDamage** that takes an integer and a function as parameters, with the function parameter type matching **computeBonusDamage**
  */
 // Function types
+func computeBonusDamage(damage: Int) -> Int {
+    return damage * 4
+}
 
 // Functions as parameters
+func dealDamage(baseDamage: Int, computeFunc: (Int) -> Int) {
+    let bonus = computeFunc(baseDamage)
+    print("Base damage: \(baseDamage)\nBonus Damage: \(bonus)\n\n\(bonus + baseDamage) total damage deal to the enemy!")
+}
+
+dealDamage(baseDamage: 23, computeFunc: computeBonusDamage)
 
 /*:
  [Previous Topic](@previous)

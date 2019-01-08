@@ -16,6 +16,51 @@
  10.Create an instance of **HealingPotion** and play around with it
  */
 // 1
+class Item {
+    //2
+    var name: String
+    var value: Int
+    
+    //3
+    init(name: String, value: Int) {
+        self.name = name
+        self.value = value
+    }
+    
+    //4
+    convenience init (name: String){
+        self.init(name: name, value: 0)
+    }
+}
+
+//5
+enum ItemType{
+    case GOOD
+    case BETTER
+    case BEST
+}
+
+//6
+class HealingPotion: Item {
+    var itemType:  ItemType = .BEST
+    var hpEffect: Int
+    
+    init(name: String, value: Int, effect: Int) {
+        self.hpEffect = effect
+        super.init(name: name, value: value)
+    }
+    
+    func useMe(){
+        print("HP boosted \(hpEffect)")
+    }
+}
+
+var potion = HealingPotion(name: "Super Potion", value: 100, effect: 150)
+print(potion.name)
+potion.useMe()
+
+
+
 
 // 2
 

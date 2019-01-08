@@ -11,9 +11,23 @@
  + Create a function called **equipItems** with a parameter and return type
  */
 // Basic function - no parameter or return type
+func saluteHunter(){
+    print("Hello there interpid Hunter!")
+}
 
+saluteHunter()
 // Basic function with return type - no paramaters
+func findNearestHunter() -> String {
+    return "Argus"
+}
 
+var nearMe = findNearestHunter()
 // Basic function with return type and parameter
+func equipItems(armor: String) -> Bool {
+    print("\(armor) successfully equipped")
+    return true
+}
+
+equipItems(armor: "Demon Vest")
 
 //: [Next Topic](@next)

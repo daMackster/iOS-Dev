@@ -10,7 +10,21 @@
  + Assign a few instance properties
  + Add a read-only computed property
  */
-// Declaring a new struct
+// Declaring a new structst
+struct Level {
+    //properties
+    let levelID: Int
+    var levelObjective: String
+    
+    var hiddenArea: String?
+    
+    var levelDescription: String {
+        return "Level ID: \(levelID) -> Objective: \(levelObjective)"
+    }
+}
+
+var dungeon = Level(levelID: 1, levelObjective: "Clear the Big Boss", hiddenArea: nil)
+print(dungeon.levelDescription)
 
 /*:
  [Previous Topic](@previous)

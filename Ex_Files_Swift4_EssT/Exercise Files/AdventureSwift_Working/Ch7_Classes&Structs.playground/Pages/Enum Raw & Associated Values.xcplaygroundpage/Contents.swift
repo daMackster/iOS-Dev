@@ -11,8 +11,34 @@
  + Write a switch statement for all the cases in the **PlayerState** enum
  */
 // Raw values
+enum NPC: String {
+    case Villager = "Common to villages, nor much useful info"
+    case Chief = "One per village, will have quest info"
+    case Blacksmith = "No limit per village, will make you cool stuff"
+}
+var blacksmith = NPC.Blacksmith
+print(blacksmith)
+
 
 // Associated values
+enum PlayerState {
+    case Alive
+    case KO(restartToLevel: Int)
+    case Unknown(debug: String)
+}
+
+//var currentState = PlayerState.KO(restartToLevel: 1)
+
+var currentState = PlayerState.Unknown(debug: "-- Error cannot proceed")
+
+switch currentState {
+case .Alive:
+    print("I'm still here!")
+case .KO(let restartToLevel):
+    print("Whoops, you'll hve to start again at level \(restartToLevel)")
+case .Unknown(let debug):
+    print ("Sorry, we're experience some difficulties \(debug)")
+}
 
 /*:
  [Previous Topic](@previous)

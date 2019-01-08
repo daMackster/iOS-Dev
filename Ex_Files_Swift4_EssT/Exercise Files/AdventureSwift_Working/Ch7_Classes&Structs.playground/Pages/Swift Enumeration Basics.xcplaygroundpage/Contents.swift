@@ -10,6 +10,19 @@
  + Create another enum called **WeaponType** with shorthand syntax
  */
 // Declaring an enum
+enum ArmorType {
+    case Heavy
+    case Medium
+    case Light
+}
+
+enum WeaponType {
+    case Sword, Hammer, Fists
+}
+
+var currentArmor = ArmorType.Medium
+print("You currently have \(currentArmor) armor equipped")
+print("Your armor type is at position \(currentArmor.hashValue) in the enum")
 
 /*:
  [Previous Topic](@previous)

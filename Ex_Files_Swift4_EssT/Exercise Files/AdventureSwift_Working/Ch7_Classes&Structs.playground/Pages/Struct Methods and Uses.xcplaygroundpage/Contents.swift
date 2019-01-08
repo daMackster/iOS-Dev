@@ -11,7 +11,21 @@
  + Use a mutating function to remove completed objectives
  */
 // Struct methods
+struct Level {
+    var objectives = ["Find the lost cat", "Collect all gemstones", "Defeat the Big boss"]
+    func queryObjectives() {
+        for (index, objective) in objectives.enumerated() {
+            print("\(index): \(objective)")
+        }
+    }
+    
+    mutating func completeObjective(index: Int) {
+        objectives.remove(at: index)
+    }
+}
 
+var marshlands = Level()
+marshlands.queryObjectives()
 /*:
  [Previous Topic](@previous)
  

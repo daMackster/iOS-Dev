@@ -14,12 +14,31 @@
  + Use a closure as a function parameter
  */
 // Empty closure
+var closureDeclaration: () -> () = {}
 
 // Basic closure
+var saluteHunter = { (parameterString: String) -> Void in
+    print(parameterString)
+}
+saluteHunter("Hello Hunter!")
 
 // Shorthand
+var saluteHunterShorthand: (String) -> String = {message in
+    return "\(message) Swift!"
+}
 
+saluteHunterShorthand("Hello ")
 // Closures as function parameters
+func fetchClosestHunters(closure: ([String]) -> Void) {
+    let hunters = ["Harrison", "Paul", "Addison"]
+    closure(hunters)
+}
+
+fetchClosestHunters{ (hunters) in
+    for hunter in hunters {
+        print("Hunter -> \(hunter)")
+    }
+}
 
 /*:
  [Previous Topic](@previous)

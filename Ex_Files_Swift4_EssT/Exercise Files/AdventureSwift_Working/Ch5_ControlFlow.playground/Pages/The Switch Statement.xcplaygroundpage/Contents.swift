@@ -12,12 +12,47 @@
  + Use a switch statement to evaluate multiple variables, and for one case bind those values to local variables and use the `where` keyword to define the case pattern
  */
 // Test variables
+let firstInitial = "H"
+let hp = 21
+let mp = 2
 
 // Simple switch
+switch firstInitial {
+case "H":
+    print("I'm guessing Harold")
+case "A":
+    print("Maybe Albert")
+default:
+    print("I've got nothing...")
+}
+// Switchwith ranges
+switch hp {
+case 0:
+    print("I'm sorry to tell you, you'r not alive...")
+case 1...25:
+    print("You need to get some health...fast")
+case 26...50:
+    print("Did someone hit you recently?")
+default:
+    print("You're not in mortal danger")
+}
 
-// Switch with ranges
+
 
 // Complex switch
+switch (mp,hp) {
+case (24, 28):
+    print("All good!")
+case (1...15, 20..<25):
+    print("Ranges are the best!")
+case (let localMP, let localHP) where localMP + localHP > 20:
+    print(localMP, localHP)
+default:
+    print("I've still got nothing...")
+}
+
+
+
 
 /*:
  [Previous Topic](@previous)

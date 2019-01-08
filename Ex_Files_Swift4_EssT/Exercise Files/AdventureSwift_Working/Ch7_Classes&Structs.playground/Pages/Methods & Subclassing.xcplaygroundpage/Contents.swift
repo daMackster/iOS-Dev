@@ -12,8 +12,46 @@
  + Set up its designated initializer and override the parent class's instance method
  */
 //Parent class
+class Adventurer {
+    var name: String
+    static var credo = "Defend the helpless!"
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func attack(damage: Int){
+        print("Attacking for \(damage) hit points!")
+    }
+    
+    static func printCredo(){
+        print (credo)
+    }
+}
+
 
 // Subclass
+
+class Ranger: Adventurer{
+    
+    var classAdvantage: String
+    
+    init(name: String, advantage: String) {
+        self.classAdvantage = advantage
+        super.init(name: name)
+    }
+    
+    override func attack(damage: Int) {
+        print("Ranger attack for \(damage)!")
+    }
+}
+
+var adventurer = Adventurer(name: "Harrison")
+var ranger = Ranger(name: "Steven", advantage: "Stealth")
+
+Adventurer.printCredo()
+Ranger.credo
+
 
 /*:
  [Previous Topic](@previous)

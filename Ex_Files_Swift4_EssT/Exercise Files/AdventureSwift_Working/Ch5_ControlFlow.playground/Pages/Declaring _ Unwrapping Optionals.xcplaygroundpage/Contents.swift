@@ -12,10 +12,28 @@
  + Use force unwrapping and understand the dangers of using it 
  */
 // Creating optionals
+var itemGathered: String? = "Pickaxe"
+var expToNextLevel: Int? = 10
+var hpBonus: Int?
 
 // Optional binding
+if let item = itemGathered {
+    print("You found a \(item)")
+}else{
+    print("No item found")
+}
+
+if let expNeeded = expToNextLevel, let bonus = hpBonus {
+    print("You need \(expNeeded) EXP to reach the next level, and receive \(bonus) HP!")
+}else{
+    print("You level is already maxed out!")
+}
 
 // Forced unwrapping
+//hpBonus!
+itemGathered!
+
+
 
 /*:
  [Previous Topic](@previous)

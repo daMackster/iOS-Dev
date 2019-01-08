@@ -12,10 +12,30 @@
  + Use **ArrayClosure** as an input parameter for a function
  */
 // Test variables
+typealias AttackTuple = (name: String, damage: Int, canRecharge: Bool)
+var sunStrike: AttackTuple = ("Sun Strike", 35, false)
+
+typealias ArrayClosure = ([Int]) -> Void
 
 // Type alias as a return value
+func returnAttack() -> AttackTuple {
+    return ("Hammer Sweep", 42, true)
+}
+
+print(returnAttack())
 
 // Type alias as a function parameter
+func fetchPlayerScores(closure: ArrayClosure) {
+    let scores = [934, 222, 101]
+    closure(scores)
+}
+
+fetchPlayerScores { (scores) in
+    print("Top Scores:")
+    for score in scores{
+        print(score)
+    }
+}
 
 /*:
  [Previous Topic](@previous)

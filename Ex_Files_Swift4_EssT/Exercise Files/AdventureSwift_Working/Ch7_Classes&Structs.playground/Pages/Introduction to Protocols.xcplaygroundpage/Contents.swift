@@ -11,8 +11,33 @@
  + Create a simple struct called **Player** and use the **Nameable** protocol
  */
 // Declare a protocol
+protocol Nameable {
+    var firstName: String {get}
+    var lastName: String {get set}
+    
+    func createFullName() -> String
+}
 
 // Extend the protocol
+extension Nameable {
+    func createFullName() -> String {
+        return "\(firstName) \(lastName)"
+    }
+}
+
+struct Player: Nameable {
+    var firstName: String
+    var lastName: String
+    
+    func createFullName() -> String{
+        return "\(firstName) \(lastName) loves Swift 4!"
+    }
+}
+
+let newPlayer = Player(firstName: "Raynor", lastName: "McFarlane")
+print(newPlayer.createFullName())
+
+
 
 // Create struct with protocol
 

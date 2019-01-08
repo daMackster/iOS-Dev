@@ -14,6 +14,53 @@
  + Explore computed properties, both read-only and read-write
  */
 // Declaring a new class
+class Adventurer{
+    // Instance properties
+    var name: String
+    var hp: Int
+    let maxHealth: Int = 100
+    
+    // Type properties
+    static var credo = "Defend the helpless!"
+    
+    // Optionals
+    var specialMove: String?
+    
+    //Computerd properties
+    var toFullHP: Int{
+        return maxHealth - hp
+    }
+    
+    var health: Int{
+        get {
+            return hp
+        }
+        
+        set {
+            hp = newValue
+        }
+    }
+    
+    // Class init
+    init(name: String, hp: Int) {
+        self.name = name
+        self.hp = hp
+    }
+    
+    convenience init(name: String){
+        self.init(name: name, hp: 100)
+    }
+}
+
+var newPlayer = Adventurer (name: "Harrison", hp: 95)
+var newDefaultPlayer = Adventurer (name: "Steven")
+
+newPlayer.health
+newPlayer.health = 85
+newPlayer.health
+newPlayer.hp
+newPlayer.toFullHP
+
 
 /*:
  [Previous Topic](@previous)

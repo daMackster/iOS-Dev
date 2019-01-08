@@ -11,9 +11,23 @@
  + Create another overloaded function of **attack** with two parameters and a return type
  */
 // Base function
+func attack(){
+    print("Attacking!")
+}
 
 // Overloaded functions
+func attack(damage: Int){
+    print("Attacking for \(damage)!")
+}
 
+func attack(damage: Double, weapon: String) -> Bool {
+    print("\(damage) damage dealt to enemy using \(weapon).")
+    return true
+}
+
+attack()
+attack(damage: 35)
+attack(damage: 30, weapon: "Hammer")
 /*:
  [Previous Topic](@previous)
  
